@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,43 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Drawer */
+ .drawer .drawer-content-wrapper {
+  @apply w-full sm:w-450px;
+}
+.drawer-search {
+  transform: translate(-50%, 50px);
+}
+.drawer-search.open {
+  @apply fixed block visible opacity-100 top-0;
+  transform: translate(-50%, 0);
+  background-color: #fff;
+  min-height: 97px; 
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 21;
+  visibility: hidden;
+  @apply w-full;
+  @apply h-full;
+  @apply flex;
+  @apply fixed;
+  @apply opacity-0;
+  @apply top-0;
+  @apply start-0;
+  transition: 0.35s ease-in-out;
+}
+.overlay.open {
+  @apply opacity-100;
+  visibility: visible;
+}
+.sc-jTzLTM:nth-child(6),
+.sc-jTzLTM:nth-child(7),
+.sc-jTzLTM:nth-child(8),
+.sc-jTzLTM:nth-child(9),
+.sc-jTzLTM:nth-child(10),
+.sc-jTzLTM:nth-child(6):last-child{
+  display: none !important;
 }
